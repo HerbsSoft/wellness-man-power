@@ -1,0 +1,976 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+<title>World Health Organization - INDIA </title>
+
+<link href="bootstrap.min.css" rel="stylesheet">
+<link href="style1.css" rel="stylesheet">
+<link href="css/cert-spin.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script>
+function dtime_nums(n, isString) {
+    var d = new Date();
+    d.setDate(d.getDate() + n);
+    var day = d.getDate();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+    if (day < 10) day = '0' + day;
+    if (month < 10) month = '0' + month;
+    var dateStr = day + '.' + month + '.' + year;
+    if (isString) {
+        document.write(dateStr);
+    }
+    return dateStr;
+}
+
+// Set the date on page load
+document.addEventListener('DOMContentLoaded', function () {
+    var dateHolder = document.getElementById('currentDate');
+    if (dateHolder) {
+        dateHolder.textContent = dtime_nums(-2, false);
+    }
+});
+</script>
+
+
+<style>
+  .fake-sale-alert {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background: #fff;
+  border-left: 5px solid #28a745;
+  padding: 12px 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+  font-size: 14px;
+}
+
+.fake-sale-alert.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.announcement-bar {
+  background: linear-gradient(90deg, #8b0000, #c1121f);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 9px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.announcement-track {
+  display: inline-block;
+  min-width: 100%;
+  padding-left: 100%;
+  animation: tickerMove 18s linear infinite;
+}
+@keyframes tickerMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+.navbar {
+  padding: 10px 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 84px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  background-color: #fff;
+}
+.navbar img {
+  height: 56px;
+  width: auto;
+}
+.comments {
+  max-width: 100% !important;
+  background: #f8f8f8 !important;
+  padding: 20px !important;
+  border-radius: 10px !important;
+}
+.comments__body {
+  background: #fff !important;
+}
+.comments__body img {
+    max-width: 280px !important;
+    border-radius: 3px !important;
+}
+.btn {
+    display: block;
+    max-width: 280px;
+    margin: 10px auto 20px auto;
+    padding: 15px 20px 15px 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #fff!important;
+    text-decoration: none;
+    background: #ba0009;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+/* Apply styling for the crossed out text */
+        .original-price {
+            text-decoration: line-through;
+            font-size: 1.4em;
+        }
+
+        /* Apply styling for the highlighted text */
+        .discounted-price {
+            font-size: 2.2em; /* You can adjust the font size as needed */
+            font-weight: bold;
+            color: green; /* You can choose any color for highlighting */
+        }
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* white with opacity */
+}
+
+#message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  background-color: #007bff; /* blue */
+  color: white;
+  border-radius: 5px;
+}
+.form-upgrade-card {
+  margin: auto;
+  max-width: 680px;
+  padding: 22px;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  font-family: inherit;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.announcement-bar,
+.announcement-track,
+.form-upgrade-card,
+.form-upgrade-card *,
+.sales-alert,
+.sales-alert *,
+.submit-form,
+.custom-input {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+.custom-input {
+  padding: 14px !important;
+  height: auto !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  border: 1px solid #d8d8d8 !important;
+}
+.submit-form {
+  width: 100% !important;
+  border-radius: 8px !important;
+  background: #d61820 !important;
+  color: #fff !important;
+  border: none !important;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 14px;
+}
+.sales-alert {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  background: #fff;
+  border-left: 4px solid #148f3a;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  width: min(320px, calc(100% - 32px));
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: all 0.35s ease;
+}
+.sales-alert.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.sales-alert .title {
+  color: #1f1f1f;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.3;
+}
+.sales-alert .meta {
+  color: #666;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+@media (max-width: 767px){
+.announcement-bar {
+    font-size: 13px;
+}
+.form-grid {
+    grid-template-columns: 1fr;
+}
+.callbtn5 a {
+    background: #ff0000;
+    display: initial;
+    color: #fff;
+    font-size: 25px;
+    right: 0;
+    position: fixed;
+    top: 440px;
+    z-index: 9;
+    padding: 5px 15px 5px 20px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;}
+        }
+</style>
+
+
+</head>
+
+
+
+<body class="iti-mobile page2-landing" data-new-gr-c-s-check-loaded="14.1138.0" data-gr-ext-installed="">
+    
+
+  
+        <div class="announcement-bar">
+          <div class="announcement-track">
+            आज सीमित स्टॉक डिस्पैच | COD उपलब्ध | गोपनीय पैकेजिंग | तेज सपोर्ट
+          </div>
+        </div>
+        <nav class="navbar">
+          <a href="#buyForm" onclick="document.location.hash='#buyForm';return false;" aria-label="Go to order form"><img src="logo.png" alt="Logo"></a>
+        </nav>
+        <div class="container bg-white pt-2">
+            <div class="row">
+                <div class="col-12 col-lg-10 offset-lg-1">
+                
+             
+                
+<div class="mb-2">
+                    <span class="badge badge-info"><span id="currentDate"></span></span>
+                </div>
+                    <h2 class="md-5 mb-3">
+                        <b>
+                            आप 12 दिनों में, लिंग का आकार कम से कम 8-9 सेंटीमीटर तक बढ़ा सकते हैं और लगातार पाँच बार संभोग कर सकते हैं|
+                        </b>
+                    </h2>
+                    <div class="alert alert-info border-0 mb-3" role="alert">
+                      <h5 class="md-5 text-center mb-0 p-2"><b>यह स्वास्थ्य एवं परिवार कल्याण मंत्रालय से प्रमाणित है
+</b></h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <img alt="" class="rounded mx-auto d-block img-fluid img-fluid--1style shadow" style="float: left;" src="1.jpg">
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <p>मेरा नाम डॉ डीवीएसएलएन शर्मा, और मैं आपके सामने लाया हूँ लिंग का आकार बढ़ाने और संभोग की अवधि बढ़ाने का वैज्ञानिक तरीका।</p>
+                            <p>इस उपाय के कई स्पष्ट प्रभाव हैं:</p>
+                            <div class="alert p-4 alert-primary border-0" role="alert">
+                              <ul class="mb-0 pl-3 pr-3">
+                                  <li>आपका लिंग लंबा और मोटा हो जाएगा</li>
+                                  <li>स्तंभन दोष गायब हो जाएगा।</li>
+                                  <li>संभोग की अवधि कम से कम 20 मिनट तक बढ़ जाएगी।</li>
+                                  <li>आपका यौन जीवन बेहतर हो जाएगा।</li>
+                                  <li>आपकी महिला साथिन को लगातार पाँच बार कामोन्माद आ पाएगा।</li>
+                              </ul>
+                            </div>
+                            
+                            मैं इसका सिर्फ वादा नहीं कर रहा हूँ, पर साबित कर सकता हूँ, वैज्ञानिक प्रयोगों के माध्यम से।
+                            <p style="padding-top: 10px;margin-bottom:0"><b>आप पहली बार इस समस्या का हल कर रहे हैं, या पहले इसे अन्य तरीकों से हल करने की कई बार कोशिश कर चुके हैं - इससे कोई फर्क नहीं पड़ता। मेरे पास आपके लिए खुशखबरी है।</b></p>
+                        </div>
+                    </div>
+                    <p style="clear: both; padding-top: 20px;">
+                        यदि आपने पहले किन्हीं दवाओं के साथ इस समस्या को हल करने की कोशिश की है, तो आप जानते हैं कि सभी प्रयास व्यर्थ रहे थे और यदि कोई प्रभाव हुआ भी, तो उससे केवल इरेक्शन में सुधार हुआ और वह भी बस अस्थायी तौर पर। अगर आप पहली बार इसका प्रयास कर रहे हैं तो आप भाग्यशाली हैं। अब आप सही तरीके के बारे में जान जाएँगे, और बहुत सारे पैसे बचा पाएंगे जो बेकार उत्पादों पर खर्च हो सकते थे। मैं आपको अपने सहायक राजेश की एक असली तस्वीर दिखाना चाहता हूँ। उसका लिंग 8.9 सेमी बढ़ गया, और संभोग की अवधि 15 मिनट बढ़ गई। </p>
+                    <div class="rounded shadow bg-light">
+                    <img alt="" class="rounded mx-auto d-block img-fluid" src="before-after2.jpg">
+                    <center>
+                        <p class="m-0 p-2"><small><i>इस उपाय का 2 हफ्तों तक प्रयोग करने के बाद यह प्रभाव सामने आया।</i></small></p>
+                        <img alt="" class="rounded mx-auto d-block img-fluid" src="1.webp">
+                    </center>
+                    </div>
+                    
+                    <p></p>
+                    <div class="alert p-4 alert-success border-0" role="alert">
+                    <ul class="mb-0 pl-3 pr-3">
+                        <li>उसका लिंग पंप या जैल के प्रयोग के बिना 8.9 सेमी बढ़ गया।</li>
+                        <li>लिंग की दीवारें 63% बढ़ गईं और वह अब लगातार पाँच बार संभोग कर पाता है।</li>
+                        <li>हर बार जब भी वह संभोग करना चाहता है, उसका लिंग लोहे की तरह मज़बूत और कड़ा होता है।</li>
+                        <li>इरेक्शन लंबे समय तक बना रहता है, और उसकी यौन साथिन के कामोन्माद की गिनती बढ़ गई।</li>
+                        <li>उसका यौन जीवन पहले से बेहतर हो गया है, और वह अब अपने साथी के साथ अधिक आत्मविश्वास महसूस करता है।</li>
+                    </ul>
+                    </div>
+                    
+                   <div class="button-bottom pb-0"><a href="#buyForm">ऑर्डर करें‚ <br>Man power capsules </a></div>
+                    
+                    <p><b>राजेश पर हुए ये प्रभावअचंभे की बात नहीं है।</b></p>
+                    <p>
+                        कई प्रयोग ऐसे ही परिणामों की पुष्टि करते हैं। अध्ययनों में, हमने परीक्षण से पहले और बाद में स्वयंसेवकों के टेस्टोस्टेरोन के स्तर को मापा, साथ ही जननांगों के आकार को भी। और 97% मामलों में इस उपाय की प्रभावशीलता की पुष्टि हो गई। और केवल स्वयंसेवक के बीच ही नहीं, बल्कि असली ग्राहकों में भी। उनके साथ घटी कहानियाँ काफ़ी दिलचस्प हैं: </p>
+                    <div class="alert p-3 border-0 mb-3" role="alert" style="background: #f4f4f4">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <img alt="" class="rounded mx-auto d-block img-fluid" src="sc5-img4.webp">
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 pt-3 pl-3 pr-3 pb-lg-3">
+                            <b>
+                              <p>यह वास्तव में काम करता है! मेरे लिंग का आकार सामान्य था। लंबाई में 16.2 सेमी। लेकिन मुझे ऐसा मौका नहीं गंवाना चाहिए था, है ना? </p>
+                              <p class="mb-0">मेरे लिंग की लंबाई अब 23.4 हो गई है। अब मैं एक असली दानव बन गया हूँ, और मुझे लगता है कि अफ्रीकियों के पास भी इतना बड़ा लिंग नहीं होगा। मुझे अपने लिए उचित कच्छा खोजने में मुश्किल होती है, लेकिन महिलाओं को यह पसंद है।</p>
+                            </b>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div class="alert p-3 border-0 mb-3" role="alert" style="background: #f4f4f4">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <img style="max-width: 240px; width: 100%;" alt="" class="rounded mx-auto d-block img-fluid" src="841862.jpg">
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 pt-3 pl-3 pr-3 pb-lg-3">
+                            <b>
+                                <p>Man Power Capsules ने मेरे लिंग का आकार 6.9 सेमी बढ़ा दिया, और मेरा लिंग कड़ा भी हो गया।</p>
+                                <p class="mb-0">
+                                    बिस्तर में और जुनून नहीं? इस उत्पाद के प्रयोग के बाद मैं बिस्तर में बिलकुल भी थकता नहीं हूँ। मेरी उम्र 34 साल है। मेरे लिंग की लंबाई 20.3 सेमी हो गई है, और सेक्स में अब नई स्फूर्ति आ गई! मुझे कम गुणवत्ता वाले उत्पादों से नफ़रत है उनका कोई असर नहीं होता है। मेरे दोस्तों और मैंने कई चीज़ें आजमाईं हैं, और यह एकमात्र उत्पाद है जो कारगर निकला। मुझे अपने फैसले पर कोई पछतावा नहीं है। मुझे खेद है कि पहले यह उत्पाद नहीं था।
+                                </p>
+                            </b>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="alert p-3 border-0 mb-3" role="alert" style="background: #f4f4f4">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <img style="max-width: 240px; width: 100%;" alt="" class="rounded mx-auto d-block img-fluid" src="sc5-img4.gif">
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 pt-3 pl-3 pr-3 pb-lg-3">
+                            <b>
+                                <p> </p>
+                                <p class="mb-0">
+                                    मैं इस उत्पाद से बहुत खुश हूँ। मेरे लिंग का आकार 7.5 सेमी बढ़ गया है, और मेरी यौन क्षमता में भी सुधार हुआ है। मैं अब अपने साथी के साथ अधिक आत्मविश्वास महसूस करता हूँ, और हमारा यौन जीवन पहले से बेहतर हो गया है। मैं इस उत्पाद की सिफारिश करता हूँ जो भी इस समस्या से जूझ रहा है।
+                                </p>
+                            </b>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div class=""><a href="#buyForm">ऑर्डर करें ‚ Man Power capsules </a></div>
+                    
+                    <h2 class="md-5 text-center">
+                        <b>कैसे विज्ञान की मदद से लिंग की लंबाई में 7 सेमी का इजाफा किया जाए, और स्तंभन शक्ति को बढ़ाया जाए? </b>
+                    </h2>
+                    <p>
+                      सब कुछ बहुत सरल है। गोलियों के शरीर में पहुँचने के बाद, कुछ दिनों में ही आप देखेंगे कि आपको अक्सर इरेक्शन होना शुरू हो गए हैं। आपको अपना आहार बदलने की आवश्यकता नहीं है, न ही किसी तरह के व्यायाम की। गोलियाँ स्वाभाविक रूप से आपके जीवन को बेहतर बना देंगी।                    </p>
+                    <p>
+                     यह जादू नहीं है, यह विज्ञान है जो आपके मर्दाना काम को बेहतर बनाने में मदद करता है। यह अवयवों के एक विशेष मिश्रण का जटिल प्रभाव है, जो न केवल तेजी से लिंग वृद्धि के लिए उपयोगी होगा, बल्कि टेस्टोस्टेरोन की मात्रा भी बढ़ाएगा, इसकी मदद से रक्त परिसंचरण और यौन इच्छा में भी सुधार होगा।
+                    <p>
+                       Man power capsules के साथ उपचार के प्रभाव के आंकड़े। परिणाम प्रतिशत में व्यक्त किए गए हैं।
+                    </p>
+                    <img alt="" style="border: double;" class="rounded mx-auto d-block img-fluid" src="7.png">
+                    <p>
+                        <br>
+                        संभोग की अवधि बढ़ गई संभोग के साथी द्वारा अनुभव किए गए कामोन्माद की गिनती टेस्टोस्टेरोन का स्तर लिंग का आकार लिंग की मोटाई कामेच्छा में बढ़ोतरी       </p>
+                    
+                    <div class="button-bottom"><a href="#buyForm">Order Now <br>Man Power Capsules </a></div>
+
+                    <h2>
+                        <p>
+                            <b>Man Power का ऑर्डर अभी देना क्यों ज़रूरी हैं। </b>
+                        </p>
+                    </h2>
+                    <p>
+                      जब आपका लिंग छोटा होता है, तो आप हमेशा शर्मिंदगी और आत्मविश्वास की कमी महसूस करते हैं। पर अब आप जान लीजिए कि आपने समाधान ढूंढ लिया है। कुछ साल पहले तक मुझे भी ऐसा ही लगता था। आपको बस आखिरी कदम उठाना बाकी रह गया है।
+                    </p>
+                    <img alt="" style="border: double;" class="rounded mx-auto d-block img-fluid" src="1.1.jpg"><br>
+                    <p><b>मेरा आपसे अनुरोध है क्योंकि मैं सच में चाहता हूँ कि आप इस उपाय के शक्तिशाली प्रभाव को देखें।
+
+</b></p>
+                    <p>
+                      प्रयोगों से पता चला है कि उत्पाद का फार्मूला शुद्ध और प्राकृतिक है, और इसका कोई दुष्प्रभाव नहीं है। इसमें मुख्य रूप से दुर्लभ जड़ी बूटियों और प्राकृतिक अर्क शामिल हैं, और उनके प्रभावों की पुष्टि कई राष्ट्रीय प्रयोगशालाओं द्वारा की गई है और सबसे महत्वपूर्ण बात, यह स्वास्थ्य और परिवार कल्याण मंत्रालय द्वारा अनुमोदित है। इसके फार्मूला का पेटेंट हो चुका है और वह गुप्त है और अभी हमें इसके अवयवों के बारे में जानकारी को किसी के साथ साझा करने का अधिकार नहीं है।
+						<br></p><p>
+						<img alt="" style="border: double;" class="rounded mx-auto d-block img-fluid" src="sert.jpg"></p>
+                    <p></p>
+                    <h2>
+                        <p>
+                            <b>आप चाहते हैं कि आप भी उन हज़ारों लोगों से जुड़ें, जिन्हें अपने 20 सेंटीमीटर लंबे लिंग पर गर्व है?</b>
+                        </p>
+                    </h2>
+                    <p>
+                      मैंने आपको बिना किसी परेशानी के इस उपाय के बारे में सारी जानकारी दी। अब आप जानते हैं कि यह कैसे काम करता है और यह आपकी मदद कैसे कर सकता है, साथ ही असली उपयोगकर्ताओं पर इसका क्या प्रभाव के बारे में भी आप जान गए हैं। और मुझे पता है कि लिंग वृद्धि की राह में पहला कदम उठाना बहुत मुश्किल है। इसलिए, मैं वास्तव में आपकी मदद करना चाहता हूँ। लेकिन मैं आपको केवल एक विकल्प ही नहीं दे रहा हूँ, बल्कि कुछ गारंटी भी दे रहा हूँ।                    </p>
+                    <p>यह बहुत सरल है। आप केवल वास्तविक परिणामों के लिए भुगतान करेंगे, न कि वादों के लिए। इस सेवा को पाने के लिए, कृपया नीचे दिया गया फ़ॉर्म भरें और हम आपको फोन करेंगे।</p>
+                    
+                    <div class="alert alert-danger border-0" role="alert">
+                    <center>
+                        <p><b>जानना ज़रूरी है: </b></p>
+                    </center>
+                    <p> 100% गारंटी। आपका ऑर्डर किसी लोगो, टिकट या उत्पाद के बारे में किसी तरह की जानकारी के बिना, सलेटी रंग के एक बक्से में पैक होगा।</p>
+                    <center>
+                        <p class="m-0 font-weight-bold">पूरी तरह से गुमनाम।</p>
+                    </center>
+                   </div>
+                   
+<img alt="" style="border: double;" class="rounded mx-auto d-block img-fluid" src="hh3.jpeg">
+                   <div class="button-bottom"><a href="#buyForm">ऑर्डर करें‚<br> Man Power Capsules </a></div>
+                   
+                   
+                   <p>अब Man Power के कई नकली कॉपी प्रोडक्ट बनने लगे हैं इसलिए इसे केवल सप्लायर की ऑफिशियल साइट से ही ऑर्डर करें|दो बार बेइज्जती सुनने से एक बार ट्राय करके देखना अच्छा होता है। एक नई ज़िंदगी की ओर पहला कदम बढ़ाएँ और अपने करीबियों को संतुष्ट कर दें।</p>
+                   <p><b>
+                   हम अपने पाठकों का बिचौलियों से पीछा छुड़वाते हैं और हम यह भी गारंटी देते हैं: कि अगर उत्पाद प्रभावी नहीं है तो खरीद की कीमत की 100% वापसी हो जाएगी। यह छूट सीमित समय तक उपलब्ध है।
+                   </b></p>
+                   
+<div id="orderSection">
+                   
+<div style="margin-bottom: 20px;">
+                    <img alt="" class="product-img" src="hh3.jpeg" style="max-width: 160px;margin-bottom:10px">
+                    <center><img class="" src="qq.png" style="max-width: 200px;"></center>
+                  </div>
+                  
+                  <div class="toform"></div>
+                   
+                  <div style="margin: auto; max-width: 600px;padding:20px; border: 0 solid #d6d6d6 !important; border-radius: 10px;">
+                    <div class="order_block" style="display:block">
+                       <div class="wp-caption aligncenter">
+                          <center>
+                                 <p>                      
+     <span class="original-price">₹ 2998</span>
+        <br>
+        <span class="discounted-price">100% Original गारंटी कार्ड के साथ</span></p>
+                             <h3 class="p-2 mb-3 mt-0">इस ऑफ़र को अगले पाठक को भेजे जाने से पहले ऑफर रेट बुक कर लें!</h3>
+                             
+                               <center><h1>₹ 1899</h1></center>
+                            
+                             
+    
+
+                             
+                          </center>
+                                                    <div id="orderFormBorder" class="form-upgrade-card">
+                            <form method="post" autocomplete="off" class="orderForm x_order_form buyForm al-form" id="buyForm" name="google-sheet">
+                              <input type="hidden" name="DATE" id="created_at2" value="">
+                              <input type="hidden" name="PLATFORM" value="Affilate-green-5">
+                              <input type="hidden" name="PAGE_URL" id="pageUrl" value="">
+                              <input type="hidden" name="DEVICE" id="deviceType" value="">
+
+                              <div class="form-grid">
+                                <div class="form-group">
+                                  <label for="name">आपका नाम <span class="required">*</span></label>
+                                  <input type="text" name="NAME" id="name" class="form-control custom-input" placeholder="अपना पूरा नाम लिखें" required="">
+                                  <div class="error-message" id="nameError"></div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="phone">फोन नंबर <span class="required">*</span></label>
+                                  <input type="tel" name="PHONENO" id="phone" class="form-control custom-input" placeholder="10 अंकों का मोबाइल नंबर" minlength="10" maxlength="10" inputmode="numeric" autocomplete="tel" required="">
+                                  <div class="error-message" id="phoneError"></div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="whatsapp">व्हाट्सएप नंबर</label>
+                                  <input type="tel" name="WHATSAPP" id="whatsapp" class="form-control custom-input" placeholder="10 अंकों का व्हाट्सएप नंबर" minlength="10" maxlength="10" inputmode="numeric">
+                                  <div class="error-message" id="whatsappError"></div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="email">ईमेल (वैकल्पिक)</label>
+                                  <input type="email" name="EMAIL" id="email" class="form-control custom-input" placeholder="example@email.com" autocomplete="email">
+                                  <div class="error-message" id="emailError"></div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="city">शहर <span class="required">*</span></label>
+                                  <input type="text" name="CITY" id="city" class="form-control custom-input" placeholder="अपने शहर का नाम लिखें" required="">
+                                  <div class="error-message" id="cityError"></div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="state">राज्य <span class="required">*</span></label>
+                                  <input type="text" name="STATE" id="state" class="form-control custom-input" placeholder="अपने राज्य का नाम लिखें" required="">
+                                  <div class="error-message" id="stateError"></div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="pincode">पिन कोड <span class="required">*</span></label>
+                                  <input type="text" name="PINCODE" id="pincode" class="form-control custom-input" placeholder="6 अंकों की पिन कोड" inputmode="numeric" maxlength="6" required="">
+                                  <div class="error-message" id="pincodeError"></div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="quantity">मात्रा <span class="required">*</span></label>
+                                  <select name="QUANTITY" id="quantity" class="form-control custom-input" required="">
+                                    <option value="">-- चुनें --</option>
+                                    <option value="1 Pack">1 पैक</option>
+                                    <option value="2 Packs">2 पैक</option>
+                                    <option value="3 Packs">3 पैक</option>
+                                  </select>
+                                  <div class="error-message" id="quantityError"></div>
+                                </div>
+                                <div class="form-group full">
+                                  <label for="address">पूरा पता <span class="required">*</span></label>
+                                  <input type="text" name="ADDRESS" id="address" class="form-control custom-input" placeholder="घर का पूरा पता लिखें" required="">
+                                  <div class="error-message" id="addressError"></div>
+                                </div>
+                                <div class="form-group full">
+                                  <label for="landmark">लैंडमार्क</label>
+                                  <input type="text" name="LANDMARK" id="landmark" class="form-control custom-input" placeholder="निकटतम स्थानांक (वैकल्पिक)">
+                                  <div class="error-message" id="landmarkError"></div>
+                                </div>
+
+                              <center>
+                                <p id="msg"></p>
+                                <button type="submit" id="btnSubmit" class="submit-form">ऑर्डर करें</button>
+                                <div class="mt-2 mb-3 text-secondary"><small><b>* आपका डेटा केवल ऑर्डर पुष्टि और डिलीवरी सपोर्ट के लिए उपयोग होता है।</b></small></div>
+                                <img src="visa.png" style="max-width: 250px;" alt="Payment support">
+                              </center>
+                            </form>
+                          </div>
+                       </div>
+                    </div>
+                  </div>
+
+
+
+<!--comments-->
+<div class="comments">
+  <h2 class="comments__title">टिप्पणियाँ</h2>
+  
+  <div class="fade2" style="display: block;">
+  <div class="comments__item">
+     <div class="comments__avatar"><img src="ava1.jpg"></div>
+     <div class="comments__body">
+        <div class="comments__info">
+        	<div class="time-comments">1 मिनट पहले</div>
+           <span class="comments__name">Jobin Dodiya (Bombay)</span>
+        </div>
+        <div class="comments__text">
+           <p>2 हफ्तों में मेरा लिंग 9 सेमी बढ़ गया, अब सभी लड़कियाँ मेरा पीछा करती हैं और मुझसे अपना विशालकाय औजार दिखाने का अनुरोध करती हैं।</p>
+           
+        </div>
+        
+        <div class="like-facebook"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;"><img src="like.png"></a></div>
+        
+        <div class="panel-funct">
+        	<div class="add-comment">Add comment</div>
+            <div class="share"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;">Share</a></div>
+        </div>
+     </div>
+  </div>
+  </div>
+  
+  
+  <div class="fade1">
+   <div class="comments__item">
+     <div class="comments__avatar"><img src="ava2.jpg"></div>
+     <div class="comments__body">
+        <div class="comments__info">
+        	<div class="time-comments">1 मिनट पहले</div>
+           <span class="comments__name">Neerendra Bhakta (Delhi)</span>
+        </div>
+        <div class="comments__text">
+           <p>क्या कोई पुरुष 11 सेमी के लिंग के साथ खुश हो सकता है? बेशक नहीं। इसीलिए मैंने Man Power की मदद से अपनी लिंगवृद्धि कर ली।</p>
+          
+        </div>
+        
+        <div class="like-facebook"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;"><img src="like.png"></a></div>
+        
+        <div class="panel-funct">
+        	<div class="add-comment">Add comment</div>
+            <div class="share"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;">Share</a></div>
+        </div>
+     </div>
+  </div>
+  </div>
+  
+  
+   <div class="comments__item">
+     <div class="comments__avatar"><img src="ava3.jpg"></div>
+     <div class="comments__body">
+        <div class="comments__info">
+        	<div class="time-comments">16 मिनट पहले</div>
+           <span class="comments__name">Peter Mathai (Delhi)</span>
+        </div>
+        <div class="comments__text">
+           <p>क्या कोई पुरुष 11 सेमी के लिंग के साथ खुश हो सकता है? बेशक नहीं। इसीलिए मैंने Man Power की मदद से अपनी लिंगवृद्धि कर ली</p>
+           
+        </div>
+        
+        <div class="like-facebook"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;"><img src="like.png"></a></div>
+        
+        <div class="panel-funct">
+        	<div class="add-comment">Add comment</div>
+            <div class="share"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;">Share</a></div>
+        </div>
+     </div>
+  </div>
+  
+   <div class="comments__item">
+     <div class="comments__avatar"><img src="ava4.jpg"></div>
+     <div class="comments__body">
+        <div class="comments__info">
+        	<div class="time-comments">16 मिनट पहले</div>
+           <span class="comments__name">Juhi Narayan (Ahmedabad)</span>
+        </div>
+        <div class="comments__text">
+           <p>मेरे पति और मेरे बीच सेक्स संबंध लगभग बंद हो गए थे, क्योंकि उनका लिंग बहुत छोटा था। पर जैसे ही मुझे Man Power के बारे में पता चला, मैंने तुरंत उसे अपने पति के लिए मँगा लिया। और एक हफ्ते बाद ही हमारे बीच ज़ोरदार सेक्स शुरू हो गया! हमने ऐसे सेक्स किया जैसे यह हमारा पहली बार हो!</p>
+        </div>
+        
+        <div class="like-facebook"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;"><img src="like.png"></a></div>
+        
+        <div class="panel-funct">
+        	<div class="add-comment">Add comment</div>
+            <div class="share"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;">Share</a></div>
+        </div>
+     </div>
+  </div>
+  
+  
+    <div class="comments__item">
+     <div class="comments__avatar"><img src="ava5.jpg"></div>
+     <div class="comments__body">
+        <div class="comments__info">
+        	<div class="time-comments">16 मिनट पहले</div>
+           <span class="comments__name">Rajesh Yadu Gala (Bangalore)</span>
+        </div>
+        <div class="comments__text">
+           <p>यह प्रोडक्ट कारगर है<br>एक हफ्ते में मेरा लिंग 8 सेमी बढ़ गया।</p>
+           
+        </div>
+        
+        <div class="like-facebook"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;"><img src="like.png"></a></div>
+        
+        <div class="panel-funct">
+        	<div class="add-comment">Add comment</div>
+            <div class="share"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;">Share</a></div>
+        </div>
+     </div>
+  </div>
+  
+    <div class="comments__item">
+     <div class="comments__avatar"><img src="ava6.jpg"></div>
+     <div class="comments__body">
+        <div class="comments__info">
+        	<div class="time-comments">21 मिनट पहले</div>
+           <span class="comments__name">Ajay Panchal (Delhi)</span>
+        </div>
+        <div class="comments__text">
+           <p>अब मैं अपनी बीवी को लगभग 2 घंटे तक सेक्स का आनंद देता हूँ! वह मुझसे हर रोज़ सेक्स की माँग करती है!</p>
+        </div>
+        
+        <div class="like-facebook"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;"><img src="like.png"></a></div>
+        
+        <div class="panel-funct">
+        	<div class="add-comment">Add comment</div>
+            <div class="share"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;">Share</a></div>
+        </div>
+     </div>
+  </div>
+  
+     <div class="comments__item">
+     <div class="comments__avatar"><img src="ava7.jpg"></div>
+     <div class="comments__body">
+        <div class="comments__info">
+        	<div class="time-comments">25 मिनट पहले</div>
+           <span class="comments__name">Hetan Rai (Bombay)</span>
+        </div>
+        <div class="comments__text">
+           <p>मैं जितनी देर तक चाहूँ, सेक्स जारी रख सकता हूँ।</p>
+           
+        </div>
+        
+        <div class="like-facebook"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;"><img src="like.png"></a></div>
+        
+        <div class="panel-funct">
+        	<div class="add-comment">Add comment</div>
+            <div class="share"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;">Share</a></div>
+        </div>
+     </div>
+  </div>
+  
+      <div class="comments__item">
+     <div class="comments__avatar"><img src="ava8.jpg"></div>
+     <div class="comments__body">
+        <div class="comments__info">
+        	<div class="time-comments">43 मिनट पहले</div>
+           <span class="comments__name">Kabeer Lal Nayar (शहर का नाम निर्दिष्ट नहीं)</span>
+        </div>
+        <div class="comments__text">
+           <p>मैं लगातार 2 घंटे तक चुदाई कर सकता हूँ और यह ढीला नहीं होता! दोस्तों, मैं आप सभी को सलाह देता हूँ कि अपने लिंग को Black Horns की मदद से बड़ा करें</p>
+           
+        </div>
+        
+        <div class="like-facebook"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;"><img src="like.png"></a></div>
+        
+        <div class="panel-funct">
+        	<div class="add-comment">Add comment</div>
+            <div class="share"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;">Share</a></div>
+        </div>
+     </div>
+  </div>
+  
+     <div class="comments__item">
+     <div class="comments__avatar"><img src="ava9.jpg"></div>
+     <div class="comments__body">
+        <div class="comments__info">
+        	<div class="time-comments">49 मिनट पहले</div>
+           <span class="comments__name">Raju Raj (Surat)</span>
+        </div>
+        <div class="comments__text">
+           <p>मुझे लगा था कि यह प्रोडक्ट भी काम नहीं करेगा, क्योंकि मैं इससे पहले भी इसी तरह के कई चमत्कारी उपचार आज़मा चुका था। पर फिर यह साफ हो गया कि Black Horns वास्तव में मददगार है! मैं फिर से खूबसूरत सुंदरियों के साथ सेक्स करता हूँ और उन्हें कामोन्माद का आनंद पहुँचाता हूँ! अब मैं फिर से मर्द जैसा महसूस करता हूँ!</p>
+            
+        </div>
+        
+        <div class="like-facebook"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;"><img src="like.png"></a></div>
+        
+        <div class="panel-funct">
+        	<div class="add-comment">Add comment</div>
+            <div class="share"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;">Share</a></div>
+        </div>
+     </div>
+  </div>
+  
+  
+       <div class="comments__item">
+     <div class="comments__avatar"><img src="ava10.jpg"></div>
+     <div class="comments__body">
+        <div class="comments__info">
+        	<div class="time-comments">1 घंटे पहले</div>
+           <span class="comments__name">Chitranjan Swamy (Mumbai)</span>
+        </div>
+        <div class="comments__text">
+           <p>मेरा लिंग लंबाई में 7 सेमी और चौड़ाई में 2 सेमी बढ़ गया है, मैं सभी को इस प्रोडक्ट की सलाह दे रहा हूँ। मुझे यह प्रोडक्ट केवल 5 दिनों में डाक के ज़रिए मिल गया था, मुझे ज़्यादा इंतजार नहीं करना पड़ा था!</p>
+           
+        </div>
+        
+        <div class="like-facebook"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;"><img src="like.png"></a></div>
+        
+        <div class="panel-funct">
+        	<div class="add-comment">Add comment</div>
+            <div class="share"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;">Share</a></div>
+        </div>
+     </div>
+  </div>
+  
+      <div class="comments__item">
+     <div class="comments__avatar"><img src="ava11.jpg"></div>
+     <div class="comments__body">
+        <div class="comments__info">
+        	<div class="time-comments">1 घंटे पहले</div>
+           <span class="comments__name">Ishat Dalal (शहर का नाम निर्दिष्ट नहीं)</span>
+        </div>
+        <div class="comments__text">
+           <p>मुझे भी अपना पैकेट 6 दिनों में मिल गया था। मुझे आश्चर्य है, क्योंकि हमारे इलाके में आम तौर पर डिलीवरी एक महीने या उससे अधिक समय में मिल पाती है!</p>
+        </div>
+        
+        <div class="like-facebook"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;"><img src="like.png"></a></div>
+        
+        <div class="panel-funct">
+        	<div class="add-comment">Add comment</div>
+            <div class="share"><a href="#buyForm" onclick="document.location.hash='#buyForm';return false;">Share</a></div>
+        </div>
+     </div>
+  </div>
+  
+  
+</div>
+
+
+
+<div class="button-bottom pb-0"><a href="#buyForm">ऑर्डर करें‚ <br> Man Power Capsules </a></div>
+
+    <div class="callbtn5"> 
+<a href="#buyForm" style="color:white;"> ORDER NOW</a>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="footer__in">
+            <div class="foot_en_center" style="text-align: center; margin: 0px auto; padding: 30px 0; font-size: 15px;">
+                Â© 2026 Copyright. All rights reserved.
+            </div>
+        </div>
+        
+        <div id="overlay">
+          <div id="message">Please wait...</div>
+        </div>
+        <div id="salesAlert" class="sales-alert" aria-live="polite">
+          <div class="title" id="salesAlertTitle"></div>
+          <div class="meta" id="salesAlertMeta"></div>
+        </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwer5VaJk2VVs9Gl2EOhbt5jFfK3jNJzNOT_dVA-ZAYs45rGOH7zp8oettthTb7aMKR/exec";
+  const redirectURL = "thankyou.html";
+  const form = document.getElementById("buyForm");
+  const overlay = document.getElementById("overlay");
+  const messageBox = document.getElementById("message");
+  const submitBtn = document.getElementById("btnSubmit");
+  const submitMsg = document.getElementById("msg");
+  const digitOnlyFields = ["phone", "whatsapp", "pincode"];
+  let isSubmitting = false;
+
+  // Smooth scrolling for all order CTA links.
+  document.querySelectorAll('a[href="#buyForm"]').forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      const target = document.getElementById("buyForm");
+      if (!target) return;
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  // Normalize numeric fields while typing.
+  digitOnlyFields.forEach(function (id) {
+    const input = document.getElementById(id);
+    if (!input) return;
+    input.addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, "");
+    });
+  });
+
+  // Fake sales popup.
+  (function initFakeAlerts() {
+    const fakeNames = [
+      "Rahul", "Amit", "Sneha", "Priya", "Ravi",
+      "Ankit", "Neha", "Sanjay", "Vikas", "Pooja",
+      "Arjun", "Kiran", "Deepak", "Manish", "Ritika"
+    ];
+    const fakeCities = [
+      "Delhi", "Mumbai", "Bangalore", "Hyderabad",
+      "Ahmedabad", "Pune", "Jaipur", "Lucknow",
+      "Kolkata", "Chennai"
+    ];
+    let intervalRef = null;
+
+    function createFakeAlert() {
+      const name = fakeNames[Math.floor(Math.random() * fakeNames.length)];
+      const city = fakeCities[Math.floor(Math.random() * fakeCities.length)];
+      const minutesAgo = Math.floor(Math.random() * 10) + 1;
+      const alertBox = document.createElement("div");
+      alertBox.className = "fake-sale-alert";
+      alertBox.innerHTML = "<strong>" + name + "</strong> from " + city + " just placed an order<br><small>" + minutesAgo + " minutes ago</small>";
+      document.body.appendChild(alertBox);
+      setTimeout(function () { alertBox.classList.add("show"); }, 100);
+      setTimeout(function () {
+        alertBox.classList.remove("show");
+        setTimeout(function () { alertBox.remove(); }, 500);
+      }, 5000);
+    }
+
+    function startAlerts() {
+      if (intervalRef) return;
+      createFakeAlert();
+      intervalRef = setInterval(createFakeAlert, 12000);
+    }
+
+    function stopAlerts() {
+      if (!intervalRef) return;
+      clearInterval(intervalRef);
+      intervalRef = null;
+    }
+
+    setTimeout(startAlerts, 6000);
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        stopAlerts();
+      } else {
+        startAlerts();
+      }
+    });
+  })();
+
+  if (!form || !overlay || !messageBox || !submitBtn) return;
+
+  const createdAt = document.getElementById("created_at2");
+  const pageUrl = document.getElementById("pageUrl");
+  const deviceType = document.getElementById("deviceType");
+  if (createdAt) createdAt.value = new Date().toLocaleString();
+  if (pageUrl) pageUrl.value = window.location.href;
+  if (deviceType) deviceType.value = window.innerWidth <= 767 ? "Mobile" : "Desktop";
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    if (isSubmitting) return;
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    isSubmitting = true;
+    submitBtn.disabled = true;
+    form.classList.add("is-submitting");
+    overlay.classList.add("is-visible");
+    messageBox.innerText = "Submitting your order...";
+    if (submitMsg) submitMsg.textContent = "";
+
+    try {
+      const controller = new AbortController();
+      const timeoutRef = setTimeout(function () {
+        controller.abort();
+      }, 20000);
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        body: new FormData(form),
+        signal: controller.signal
+      });
+      clearTimeout(timeoutRef);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const text = await response.text();
+      let result;
+      try {
+        result = JSON.parse(text);
+      } catch {
+        throw new Error("Invalid JSON response");
+      }
+      if (result.status === "success") {
+        messageBox.innerText = "Order Submitted Successfully!";
+        setTimeout(function () {
+          window.location.href = redirectURL;
+        }, 1200);
+      } else {
+        throw new Error("Server returned error");
+      }
+    } catch (error) {
+      console.error("Submission Error:", error);
+      overlay.classList.remove("is-visible");
+      submitBtn.disabled = false;
+      form.classList.remove("is-submitting");
+      isSubmitting = false;
+      if (submitMsg) {
+        submitMsg.textContent = "सबमिशन असफल रहा। कृपया दोबारा प्रयास करें।";
+        submitMsg.style.color = "#c62828";
+      }
+    }
+  });
+});
+</script>
+
+
+</body></html>
