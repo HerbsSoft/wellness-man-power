@@ -1,0 +1,135 @@
+/* Scoped page-level fixes for page2.html */
+.page2-landing {
+    background: #f3f5f8;
+    color: #1f2933;
+}
+
+.page2-landing .container.bg-white {
+    margin-top: 14px;
+    border-radius: 12px;
+    box-shadow: 0 6px 28px rgba(27, 39, 51, 0.12);
+    padding-bottom: 20px;
+}
+
+.page2-landing img {
+    max-width: 100%;
+    height: auto;
+}
+
+.page2-landing .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.page2-landing .col-12.col-lg-10.offset-lg-1 {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.page2-landing .button-bottom {
+    text-align: center;
+    margin: 18px 0 10px;
+}
+
+.page2-landing .button-bottom a {
+    display: inline-block;
+    width: min(100%, 430px);
+    padding: 14px 18px;
+    border-radius: 999px;
+    line-height: 1.25;
+    text-decoration: none;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(120deg, #bf1d1d, #e23838);
+    box-shadow: 0 8px 24px rgba(191, 29, 29, 0.28);
+}
+
+.page2-landing .button-bottom a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.page2-landing .callbtn5 a {
+    display: none;
+}
+
+.page2-landing .form-upgrade-card {
+    width: 100%;
+}
+
+.page2-landing .form-group {
+    margin-bottom: 0;
+}
+
+.page2-landing .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.page2-landing #overlay {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.page2-landing #overlay.is-visible {
+    display: flex;
+}
+
+.page2-landing #message {
+    position: static;
+    transform: none;
+    min-width: min(90vw, 340px);
+    font-weight: 700;
+}
+
+.page2-landing #buyForm.is-submitting .submit-form {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+@media (max-width: 991px) {
+    .page2-landing .container.bg-white {
+        border-radius: 0;
+        margin-top: 0;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .page2-landing .col-12.col-lg-10.offset-lg-1 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .page2-landing .comments__item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .page2-landing .comments__avatar {
+        margin: 0;
+    }
+
+    .page2-landing .comments__body img {
+        max-width: 100% !important;
+    }
+
+    .page2-landing .callbtn5 a {
+        display: inline-block;
+        position: fixed;
+        top: auto;
+        bottom: 84px;
+        right: 0;
+        z-index: 10;
+        padding: 6px 14px 6px 18px;
+        border-top-left-radius: 24px;
+        border-bottom-left-radius: 24px;
+        text-decoration: none;
+        font-weight: 700;
+        color: #fff !important;
+        background: #d71414;
+    }
+}
